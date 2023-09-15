@@ -1,7 +1,9 @@
 
-folderPath        = "C:\path\to\your\folder"
-substringToMatch  = "substring_to_match"
-prefixToAdd       = "prefix_to_add_"
+' add_prefix $FOLDER $Filnmame_Substring $Prefix_to_add
+
+folderPath        = WScript.Arguments(0)
+substringToMatch  = WScript.Arguments(2)
+prefixToAdd       = WScript.Arguments(1)
 
 
  Set objFSO    = CreateObject("Scripting.FileSystemObject")
@@ -17,7 +19,7 @@ prefixToAdd       = "prefix_to_add_"
             objFile.Name = newFileName
         
             ' Print a message indicating the renaming
-            WScript.Echo "Renamed '" & objFile.Name & "'"
+
     End If
 Next
 
